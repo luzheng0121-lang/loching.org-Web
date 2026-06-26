@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chinglo — Notebook</title>
+<meta name="description" content="Chinglo. Book design, editorial design, sound art, experimental music. An archive of ongoing work.">
+
+<!-- 
+  TYPOGRAPHY
+  Display: Newsreader — a contemporary serif designed for long-form reading,
+  with enough structural idiosyncrasy (ink-traps, sharp terminals) to carry
+  personality at large sizes without tipping into decorative.
+  Body/UI: Söhne-adjacent grotesque substitute — using Inter at restrained
+  tracking, set small and tight, so it recedes and lets the serif lead.
+  A monospace is used sparingly for folio numbers and metadata — borrowed
+  from the convention of printer's marks and proof sheets.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,72,300;0,72,400;0,72,500;1,72,400&family=Inter:wght@400;500&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/motion.css">
+</head>
+<body>
+
+<!-- 
+  RUNNING HEAD
+  Persists across the whole visit like the running header of a printed book —
+  it never moves, never animates, just states where you are. This is the
+  site's one structural device, present everywhere, instead of a nav bar
+  that performs "navigation."
+-->
+<header class="running-head" data-folio-section="Contents">
+  <span class="running-head__mark">C.</span>
+  <span class="running-head__section" id="runningHeadSection">Contents</span>
+  <span class="running-head__folio" id="runningHeadFolio">01</span>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       SPREAD 01 — TITLE PAGE
+       A book's title page states the work plainly: name, what it is,
+       nothing more. No tagline, no CTA. Restraint is the introduction.
+  ============================================================ -->
+  <section class="spread" id="spread-title" data-folio="01" data-section-name="Contents">
+    <div class="spread__inner spread__inner--title">
+      <p class="kicker">An evolving archive — begun 2026</p>
+      <h1 class="title-page__name">Chinglo</h1>
+      <p class="title-page__role">
+        Book design. Editorial design.<br>
+        Sound art &amp; experimental music.<br>
+        Creative coding. Visual research.
+      </p>
+      <p class="title-page__note">
+        Trained in fine art and music before turning to the printed page —
+        this practice treats a book the way a score treats silence:
+        as structure, not decoration.
+      </p>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Contents</span>
+      <span class="scroll-cue__line"></span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SPREAD 02 — TABLE OF CONTENTS (the real hero)
+       Per the brief: the hero should be a thesis, not a tagline.
+       The truest thing about this practice is that it spans several
+       disciplines and is held together by deliberate structure rather
+       than improvisation. So the "hero" IS the contents page — every
+       discipline numbered and held to the same weight, the same way
+       a book's table of contents refuses to let any chapter shout
+       louder than another.
+  ============================================================ -->
+  <section class="spread" id="spread-contents" data-folio="02" data-section-name="Contents">
+    <div class="spread__inner">
+      <p class="section-label">Contents</p>
+      <ol class="toc">
+        <li class="toc__item">
+          <a href="#work-binding" class="toc__link">
+            <span class="toc__num">01</span>
+            <span class="toc__title">Book &amp; Editorial Design</span>
+            <span class="toc__desc">Structure, binding, and the page as a sequence of decisions</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="#work-sound" class="toc__link">
+            <span class="toc__num">02</span>
+            <span class="toc__title">Sound &amp; Experimental Music</span>
+            <span class="toc__desc">Composition and listening as a research method</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="#work-research" class="toc__link">
+            <span class="toc__num">03</span>
+            <span class="toc__title">Visual Research &amp; Creative Coding</span>
+            <span class="toc__desc">Tools, prompts, and systems built to think with</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="#journal" class="toc__link">
+            <span class="toc__num">04</span>
+            <span class="toc__title">Journal</span>
+            <span class="toc__desc">Notes from an ongoing practice</span>
+          </a>
+        </li>
+        <li class="toc__item">
+          <a href="#colophon" class="toc__link">
+            <span class="toc__num">05</span>
+            <span class="toc__title">Colophon</span>
+            <span class="toc__desc">How this practice works, and how to begin a commission</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SPREAD 03 — BOOK & EDITORIAL DESIGN
+  ============================================================ -->
+  <section class="spread spread--chapter" id="work-binding" data-folio="03" data-section-name="01 — Book &amp; Editorial Design">
+    <div class="spread__inner">
+      <p class="chapter-num">01</p>
+      <h2 class="chapter-title">Book &amp; Editorial Design</h2>
+      <p class="chapter-intro">
+        Each commission begins from a structural question before a visual
+        one — how a book opens, how it is bound, how the reader's hand
+        moves through it. Typography, paper, and binding are treated as a
+        single material, not three separate decisions layered on top of
+        each other.
+      </p>
+
+      <div class="work-grid">
+        <article class="work-card">
+          <div class="work-card__plate" aria-hidden="true">
+            <svg viewBox="0 0 4 5" preserveAspectRatio="none"><rect width="4" height="5" fill="currentColor" opacity="0.06"/></svg>
+          </div>
+          <p class="work-card__num">i.</p>
+          <h3 class="work-card__title">A Practice Without a Cover</h3>
+          <p class="work-card__meta">Hand-bound monograph — case study</p>
+          <p class="work-card__desc">
+            A binding that refuses a single front: the book can be opened
+            from either end, two halves meeting at an unmarked centre.
+            The structure carries the argument before a single word does.
+          </p>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card__plate" aria-hidden="true">
+            <svg viewBox="0 0 4 5" preserveAspectRatio="none"><rect width="4" height="5" fill="currentColor" opacity="0.06"/></svg>
+          </div>
+          <p class="work-card__num">ii.</p>
+          <h3 class="work-card__title">Plainsong, Reset</h3>
+          <p class="work-card__meta">Poetry collection — typographic system</p>
+          <p class="work-card__desc">
+            A single restrained grid, reused without exception across
+            ninety pages, so that variation in the poems is never
+            confused with variation in the design.
+          </p>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card__plate" aria-hidden="true">
+            <svg viewBox="0 0 4 5" preserveAspectRatio="none"><rect width="4" height="5" fill="currentColor" opacity="0.06"/></svg>
+          </div>
+          <p class="work-card__num">iii.</p>
+          <h3 class="work-card__title">Field Notes, Bound</h3>
+          <p class="work-card__meta">Illustrated essay collection — in progress</p>
+          <p class="work-card__desc">
+            Hand-drawn illustration set against a deliberately quiet page —
+            colour restraint and a structural fold used as the only joke
+            the book allows itself.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SPREAD 04 — SOUND & EXPERIMENTAL MUSIC
+  ============================================================ -->
+  <section class="spread spread--chapter" id="work-sound" data-folio="04" data-section-name="02 — Sound &amp; Experimental Music">
+    <div class="spread__inner">
+      <p class="chapter-num">02</p>
+      <h2 class="chapter-title">Sound &amp; Experimental Music</h2>
+      <p class="chapter-intro">
+        Before the page, there was the score — and the score never fully
+        left. Listening, more than looking, is where the discipline of
+        restraint was first learned: a rest is also a decision.
+      </p>
+
+      <div class="sound-list">
+        <div class="sound-list__row">
+          <span class="sound-list__num">01</span>
+          <span class="sound-list__title">Études for an Empty Room</span>
+          <span class="sound-list__tag">tape, room tone</span>
+        </div>
+        <div class="sound-list__row">
+          <span class="sound-list__num">02</span>
+          <span class="sound-list__title">Marginalia (for two readers)</span>
+          <span class="sound-list__tag">graphic score, performance</span>
+        </div>
+        <div class="sound-list__row">
+          <span class="sound-list__num">03</span>
+          <span class="sound-list__title">Notation Without Sound</span>
+          <span class="sound-list__tag">drawing, silence as score</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SPREAD 05 — VISUAL RESEARCH & CREATIVE CODING
+  ============================================================ -->
+  <section class="spread spread--chapter" id="work-research" data-folio="05" data-section-name="03 — Visual Research &amp; Creative Coding">
+    <div class="spread__inner">
+      <p class="chapter-num">03</p>
+      <h2 class="chapter-title">Visual Research &amp; Creative Coding</h2>
+      <p class="chapter-intro">
+        An engineer's habits, built deliberately on top of an artist's
+        instincts — first-principles study of colour, type, and image as
+        material, and tools written to think with rather than to perform.
+      </p>
+
+      <div class="research-grid">
+        <div class="research-item">
+          <p class="research-item__num">01</p>
+          <p class="research-item__title">On Letterspacing as Structure</p>
+          <p class="research-item__desc">A study of optical kerning across three type systems.</p>
+        </div>
+        <div class="research-item">
+          <p class="research-item__num">02</p>
+          <p class="research-item__title">Prompting as Drafting</p>
+          <p class="research-item__desc">Notes on writing instructions the way one writes a brief.</p>
+        </div>
+        <div class="research-item">
+          <p class="research-item__num">03</p>
+          <p class="research-item__title">Colour Without Decoration</p>
+          <p class="research-item__desc">Restraint as a colour theory, not a colour palette.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SPREAD 06 — JOURNAL
+  ============================================================ -->
+  <section class="spread spread--chapter" id="journal" data-folio="06" data-section-name="04 — Journal">
+    <div class="spread__inner">
+      <p class="chapter-num">04</p>
+      <h2 class="chapter-title">Journal</h2>
+      <p class="chapter-intro">
+        Short, dated notes — kept the way a practice keeps a notebook, not
+        the way a studio keeps a blog.
+      </p>
+
+      <div class="journal-list">
+        <article class="journal-entry">
+          <time class="journal-entry__date">2026.06</time>
+          <h3 class="journal-entry__title">On choosing one direction at a time</h3>
+          <p class="journal-entry__excerpt">A practice spread across too many disciplines needs fewer ideas, not more discipline — a note on building structures that protect focus rather than relying on willpower.</p>
+        </article>
+        <article class="journal-entry">
+          <time class="journal-entry__date">2026.03</time>
+          <h3 class="journal-entry__title">What a binding is allowed to say</h3>
+          <p class="journal-entry__excerpt">A book's structure can carry an argument before its content does — some notes from a recent commission.</p>
+        </article>
+        <article class="journal-entry">
+          <time class="journal-entry__date">2025.11</time>
+          <h3 class="journal-entry__title">Leaving the publishing house</h3>
+          <p class="journal-entry__excerpt">On the difference between designing inside a system and designing the system itself.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SPREAD 07 — COLOPHON / CONTACT
+       A colophon traditionally states how a book was made. Here it
+       states how the practice works, and ends — appropriately — with
+       the quietest possible invitation to begin a conversation.
+  ============================================================ -->
+  <section class="spread spread--colophon" id="colophon" data-folio="07" data-section-name="05 — Colophon">
+    <div class="spread__inner">
+      <p class="chapter-num">05</p>
+      <h2 class="chapter-title">Colophon</h2>
+
+      <div class="colophon-grid">
+        <div class="colophon-block">
+          <p class="colophon-block__label">Practice</p>
+          <p class="colophon-block__text">
+            Independent. Based on direct conversation rather than a fixed
+            process — every commission begins with a structural question,
+            not a template.
+          </p>
+        </div>
+        <div class="colophon-block">
+          <p class="colophon-block__label">Available for</p>
+          <p class="colophon-block__text">
+            Book design. Editorial systems. Illustrated and hand-drawn
+            publications. Sound-related visual work.
+          </p>
+        </div>
+        <div class="colophon-block">
+          <p class="colophon-block__label">Contact</p>
+          <p class="colophon-block__text">
+            <a class="text-link" href="mailto:hello@chinglo.studio">hello@chinglo.studio</a><br>
+            <a class="text-link" href="#" target="_blank" rel="noopener">Xiaohongshu ↗</a>
+          </p>
+        </div>
+      </div>
+
+      <p class="colophon-footer">
+        Set in Newsreader and Inter. Built on an editorial grid, in the
+        spirit of the books it describes. © 2026 Chinglo.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/folio.js"></script>
+<script src="js/reveal.js"></script>
+</body>
+</html>
