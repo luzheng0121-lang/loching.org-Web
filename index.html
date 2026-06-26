@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHINGLO :: WORKS</title>
+<meta name="description" content="Chinglo — book design, editorial design, sound art.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 
+  左侧固定目录
+  不是“导航菜单”，是“作品列表”本身。永远可见，永远在同一个位置。
+  点击直接切换右侧内容，不跳转页面，不刷新——像剧场节目单一页翻到底。
+-->
+<nav class="index" id="index">
+  <div class="index__head">
+    <a href="#" class="index__logo">CHINGLO</a>
+    <p class="index__role">book design / editorial / sound</p>
+  </div>
+
+  <button class="index__toggle" id="indexToggle" aria-expanded="false">index</button>
+
+  <ul class="index__list" id="indexList">
+    <li><a href="#" data-target="w01" class="index__link is-active">a practice without a cover</a></li>
+    <li><a href="#" data-target="w02" class="index__link">plainsong, reset</a></li>
+    <li><a href="#" data-target="w03" class="index__link">field notes, bound</a></li>
+    <li><a href="#" data-target="w04" class="index__link">études for an empty room</a></li>
+    <li><a href="#" data-target="w05" class="index__link">marginalia (for two readers)</a></li>
+    <li><a href="#" data-target="w06" class="index__link">notation without sound</a></li>
+  </ul>
+
+  <div class="index__foot">
+    <a href="#" data-target="about" class="index__link index__link--meta">about</a>
+    <a href="#" data-target="contact" class="index__link index__link--meta">contact</a>
+    <a href="mailto:hello@chinglo.studio" class="index__link index__link--meta">email ↗</a>
+  </div>
+</nav>
+
+<!-- 
+  右侧主区域
+  每个 .panel 对应左侧一条目录。一次只显示一个，满版铺满图片/视频，
+  文字信息以朴素列表压在图片下方或旁边——不做卡片，不做装饰边框。
+-->
+<main class="stage" id="stage">
+
+  <article class="panel is-active" id="w01" data-folio="01 / 06">
+    <div class="panel__media">
+      <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=2000" alt="" loading="eager">
+    </div>
+    <div class="panel__info">
+      <h1 class="panel__title">A Practice Without a Cover</h1>
+      <dl class="panel__meta">
+        <div><dt>type</dt><dd>hand-bound monograph</dd></div>
+        <div><dt>year</dt><dd>2026</dd></div>
+        <div><dt>status</dt><dd>case study</dd></div>
+      </dl>
+      <p class="panel__text">
+        A binding that refuses a single front: the book opens from either
+        end, two halves meeting at an unmarked centre. The structure
+        carries the argument before a single word does.
+      </p>
+    </div>
+  </article>
+
+  <article class="panel" id="w02" data-folio="02 / 06">
+    <div class="panel__media">
+      <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=2000" alt="" loading="lazy">
+    </div>
+    <div class="panel__info">
+      <h1 class="panel__title">Plainsong, Reset</h1>
+      <dl class="panel__meta">
+        <div><dt>type</dt><dd>poetry collection / typographic system</dd></div>
+        <div><dt>year</dt><dd>2025</dd></div>
+        <div><dt>status</dt><dd>published</dd></div>
+      </dl>
+      <p class="panel__text">
+        A single restrained grid, reused without exception across ninety
+        pages, so that variation in the poems is never confused with
+        variation in the design.
+      </p>
+    </div>
+  </article>
+
+  <article class="panel" id="w03" data-folio="03 / 06">
+    <div class="panel__media">
+      <img src="https://images.unsplash.com/photo-1455894127589-22f75500213a?q=80&w=2000" alt="" loading="lazy">
+    </div>
+    <div class="panel__info">
+      <h1 class="panel__title">Field Notes, Bound</h1>
+      <dl class="panel__meta">
+        <div><dt>type</dt><dd>illustrated essay collection</dd></div>
+        <div><dt>year</dt><dd>in progress</dd></div>
+        <div><dt>status</dt><dd>commission</dd></div>
+      </dl>
+      <p class="panel__text">
+        Hand-drawn illustration set against a deliberately quiet page —
+        colour restraint and a structural fold used as the only joke the
+        book allows itself.
+      </p>
+    </div>
+  </article>
+
+  <article class="panel" id="w04" data-folio="04 / 06">
+    <div class="panel__media panel__media--audio">
+      <div class="audio-block" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="panel__info">
+      <h1 class="panel__title">Études for an Empty Room</h1>
+      <dl class="panel__meta">
+        <div><dt>type</dt><dd>tape, room tone</dd></div>
+        <div><dt>year</dt><dd>2024</dd></div>
+        <div><dt>status</dt><dd>archive</dd></div>
+      </dl>
+      <p class="panel__text">
+        Recordings of rooms with no performer in them — silence treated
+        as a compositional material rather than an absence.
+      </p>
+    </div>
+  </article>
+
+  <article class="panel" id="w05" data-folio="05 / 06">
+    <div class="panel__media panel__media--audio">
+      <div class="audio-block" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="panel__info">
+      <h1 class="panel__title">Marginalia (for two readers)</h1>
+      <dl class="panel__meta">
+        <div><dt>type</dt><dd>graphic score, performance</dd></div>
+        <div><dt>year</dt><dd>2023</dd></div>
+        <div><dt>status</dt><dd>performed once</dd></div>
+      </dl>
+      <p class="panel__text">
+        A score written to be read by two people at once, at different
+        speeds — the gap between their readings is the piece.
+      </p>
+    </div>
+  </article>
+
+  <article class="panel" id="w06" data-folio="06 / 06">
+    <div class="panel__media panel__media--audio">
+      <div class="audio-block" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="panel__info">
+      <h1 class="panel__title">Notation Without Sound</h1>
+      <dl class="panel__meta">
+        <div><dt>type</dt><dd>drawing, silence as score</dd></div>
+        <div><dt>year</dt><dd>2023</dd></div>
+        <div><dt>status</dt><dd>archive</dd></div>
+      </dl>
+      <p class="panel__text">
+        A notation system for music that is never performed — the
+        drawing is the only version of the piece that exists.
+      </p>
+    </div>
+  </article>
+
+  <article class="panel panel--text" id="about" data-folio="—">
+    <div class="panel__info panel__info--wide">
+      <h1 class="panel__title">About</h1>
+      <p class="panel__text">
+        Trained in fine art and music before turning to the printed
+        page. Left a position at a publishing house in 2025 to work
+        independently. The practice treats a book the way a score
+        treats silence — as structure, not decoration.
+      </p>
+      <p class="panel__text">
+        Available for book design, editorial systems, illustrated and
+        hand-drawn publications, and sound-related visual work.
+      </p>
+    </div>
+  </article>
+
+  <article class="panel panel--text" id="contact" data-folio="—">
+    <div class="panel__info panel__info--wide">
+      <h1 class="panel__title">Contact</h1>
+      <dl class="panel__meta panel__meta--stacked">
+        <div><dt>email</dt><dd><a href="mailto:hello@chinglo.studio">hello@chinglo.studio</a></dd></div>
+        <div><dt>xiaohongshu</dt><dd><a href="#" target="_blank" rel="noopener">@chinglo ↗</a></dd></div>
+      </dl>
+    </div>
+  </article>
+
+</main>
+
+<div class="folio" id="folio" aria-hidden="true">01 / 06</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
