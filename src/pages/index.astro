@@ -1,17 +1,58 @@
 ---
-
+import '../styles/global.css';
 ---
 
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Loching</title>
 	</head>
+
 	<body>
-		<h1>Astro</h1>
+		<div class="layout">
+			<!-- 左侧固定导航 -->
+			<nav class="sidebar">
+				<a href="/" class="logo">LOCHING</a>
+				<ul class="nav-links">
+					<li><a href="/">Work</a></li>
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</nav>
+
+			<!-- 主内容：作品网格 -->
+			<main class="work-index">
+				<section class="work-category" data-medium="design">
+					<h2>Design</h2>
+					<div class="work-grid">
+						<article class="work-item">
+							<h3>Book Design Project</h3>
+							<p class="meta">Editorial / 2026</p>
+						</article>
+					</div>
+				</section>
+
+				<section class="work-category" data-medium="sound">
+					<h2>Sound</h2>
+					<div class="work-grid">
+						<article class="work-item">
+							<h3>Sound Installation</h3>
+							<p class="meta">Sound Art / 2026</p>
+						</article>
+					</div>
+				</section>
+
+				<section class="work-category" data-medium="music">
+					<h2>Music</h2>
+					<div class="work-grid">
+						<article class="work-item">
+							<h3>Experimental Track</h3>
+							<p class="meta">Music / 2026</p>
+						</article>
+					</div>
+				</section>
+			</main>
+		</div>
 	</body>
 </html>
