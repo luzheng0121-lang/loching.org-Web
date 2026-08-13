@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import { notes } from '../data/site';
+---
+
+<BaseLayout title="Texts 字" section="texts">
+	<section class="notes-page notes-reading-room" aria-labelledby="texts-title">
+		<div class="note-reading-pane">
+			<header class="notes-single-heading"><h1 id="texts-title">誌簿</h1></header>
+			{notes.map((note, index) => (
+				<article class:list={['note-reading-entry', note.type]}>
+					<header class="note-post-header">
+						<div class="note-avatar" aria-hidden="true">lz</div>
+						<div><h2>luzheng</h2><p class="note-reading-meta">{note.date} · {note.year}</p></div>
+					</header>
+					<div class="note-reading-text">{note.text.split('\n\n').map((paragraph) => <p>{paragraph}</p>)}</div>
+				</article>
+			))}
+		</div>
+	</section>
+</BaseLayout>

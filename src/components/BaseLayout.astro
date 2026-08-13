@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	section?: 'work' | 'events' | 'texts' | 'about';
+}
+
+const { title, section } = Astro.props;
+const navigation = [
+	{ href: '/work', key: 'work', label: 'Work_作品' },
+	{ href: '/events', key: 'events', label: 'Events_時間' },
+	{ href: '/texts', key: 'texts', label: 'Texts_字' },
+	{ href: '/about', key: 'about', label: 'About_相關' },
+];
+---
+
+<!doctype html>
+<html lang="zh-Hant">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Luzheng — works, events, texts and related materials." />
+		<title>{title} — Luzheng</title>
+	</head>
+	<body>
+		<header class="site-header">
+			<a class="site-name" href="/work" aria-label="Work home">luzheng.org</a>
+			<nav class="site-nav" aria-label="Primary navigation">
+				{navigation.map((item) => <a href={item.href} aria-current={section === item.key ? 'page' : undefined}>{item.label}</a>)}
+			</nav>
+		</header>
+		<main><slot /></main>
+		<footer class="site-footer">© {new Date().getFullYear()} Luzheng</footer>
+	</body>
+</html>

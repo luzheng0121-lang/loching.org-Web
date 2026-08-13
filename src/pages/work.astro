@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import { releases } from '../data/site';
+
+const sortedReleases = [...releases].sort((a, b) => Number(b.year) - Number(a.year));
+---
+
+<BaseLayout title="Work 作品" section="work">
+	<section class="archive-page work-page" aria-labelledby="work-title">
+		<header class="page-intro">
+				<h1 id="work-title">music</h1>
+		</header>
+		<div class="release-stream">
+			{sortedReleases.map((release) => (
+				<article class:list={{ 'release-entry': true, 'archive-work': release.kind === 'work' }}>
+					<div class="release-meta">
+						<div class="release-heading">
+							<h2>{release.title}</h2>
+							<div class="release-rule"><span>{release.format}</span>{release.year && <span>{release.year}</span>}</div>
+						</div>
+						{release.description && <p class="release-description">{release.description}</p>}
+						<ul class="release-credits">{release.credits.filter(Boolean).map((credit) => <li>{credit}</li>)}</ul>
+						{release.tracks?.length > 0 && <section class="release-section"><h3>Tracklist</h3><ol>{release.tracks.map((track) => <li>{track}</li>)}</ol></section>}
+						{release.linerNotes && <section class="release-section"><h3>Text</h3><div class="release-text">{release.linerNotes.map((line) => <p>{line}</p>)}</div></section>}
+					</div>
+						<div class="release-media">
+							<div class="release-sleeve" aria-hidden="true"></div>
+							{release.bandcampUrl && <a class="audio-placeholder" href={release.bandcampUrl} target="_blank" rel="noreferrer" aria-label={`Listen to ${release.title} on ${release.kind === 'music' ? 'SoundCloud' : 'Bandcamp'}`}><span>▶</span><p>listen on {release.kind === 'music' ? 'SoundCloud' : 'Bandcamp'} ↗</p></a>}
+						</div>
+				</article>
+			))}
+		</div>
+	</section>
+</BaseLayout>

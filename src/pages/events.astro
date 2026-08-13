@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import { events } from '../data/events';
+---
+
+<BaseLayout title="Events 事件" section="events">
+	<section class="events-browser" aria-labelledby="events-title">
+		<aside class="events-index">
+			<header>
+				<h1 id="events-title">演出索引</h1>
+				<p>2022—2026</p>
+			</header>
+			<ol>
+				{events.map((event, index) => (
+					<li>
+						<button type="button" class:list={{ active: index === 0 }} data-event={index} aria-pressed={index === 0 ? 'true' : 'false'}>
+							<time>{event.date}</time>
+							<span class="index-information">
+								<strong>{event.name || 'Untitled event'}</strong>
+								<em>{event.place}</em>
+							</span>
+						</button>
+					</li>
+				))}
+			</ol>
+		</aside>
+		<section class="event-detail" aria-live="polite">
+			{events.map((event, index) => (
+				<article id={`event-${index}`} class:list={{ active: index === 0 }} data-detail={index}>
+					<time>{event.date}</time>
+					<h2>{event.name || 'Untitled event'}</h2>
+					{event.people && <p class="detail-people">{event.people}</p>}
+					<p class="detail-place">{event.place}</p>
+					{event.archive ? (
+						<div class="event-archive">
+							<p>{event.archive.note}</p>
+							{event.archive.images?.length ? <div class="event-images">{event.archive.images.map((image) => <img src={image} alt="Event archive" loading="lazy" />)}</div> : <p class="archive-empty">Photographs will be added to this archive.</p>}
+						</div>
+					) : <p class="archive-empty">rebuilding....</p>}
+				</article>
+			))}
+		</section>
+	</section>
+	<script>
+		const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-event]')];
+		const details = [...document.querySelectorAll<HTMLElement>('[data-detail]')];
+		const detailPane = document.querySelector<HTMLElement>('.event-detail');
+		const setActive = (selected?: string) => buttons.forEach((button) => {
+			const active = button.dataset.event === selected;
+			button.classList.toggle('active', active);
+			button.setAttribute('aria-pressed', String(active));
+		});
+		buttons.forEach((button) => button.addEventListener('click', () => {
+			const selected = button.dataset.event;
+			document.querySelector(`#event-${selected}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			setActive(selected);
+		}));
+		if (detailPane) {
+			const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+				if (entry.isIntersecting) setActive((entry.target as HTMLElement).dataset.detail);
+			}), { root: detailPane, threshold: 0.45 });
+			details.forEach((detail) => observer.observe(detail));
+		}
+	</script>
+</BaseLayout>
